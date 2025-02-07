@@ -1,0 +1,40 @@
+[project]
+name = "real-estate-marketplace"
+authors = []
+description = "Decentralized real estate marketplace on Stacks blockchain"
+telemetry = false
+requirements = []
+boot_contracts = ["pox", "costs-v2", "bns"]
+
+[contracts.nft-trait]
+path = "contracts/traits/nft-trait.clar"
+clarity_version = 2
+epoch = 2.1
+
+[contracts.property-nft]
+path = "contracts/property-nft.clar"
+clarity_version = 2
+epoch = 2.1
+
+[contracts.marketplace]
+path = "contracts/marketplace.clar"
+clarity_version = 2
+epoch = 2.1
+
+[contracts.escrow]
+path = "contracts/escrow.clar"
+clarity_version = 2
+epoch = 2.1
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = true
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
